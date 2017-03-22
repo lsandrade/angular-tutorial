@@ -134,4 +134,9 @@ app
     $scope.user = {};
 })
 
+.controller('FilterCtrl', function($scope){
+    $scope.myString = "hello filter";
+})
+
+
 ;

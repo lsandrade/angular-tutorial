@@ -1,4 +1,4 @@
-var app = angular.module('invoice1', []);
+var app = angular.module('invoice1', ['filters']);
 
 var INTEGER_REGEXP = /^-?\d+$/;
 
