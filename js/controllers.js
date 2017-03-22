@@ -60,4 +60,13 @@ app
     };
 })
 
+.controller('myNewServiceController', function($scope, ListService){
+    $scope.items =  ListService.items();
+    $scope.add = function(item){
+        ListService.add(item);
+        console.log($scope.items);
+        $scope.items = ListService.items();
+    }
+})
+
 ;

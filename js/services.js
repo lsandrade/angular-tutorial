@@ -28,4 +28,21 @@ app
         }
     };
 }])
+
+.factory('ListService', function(){
+    var items = ['oi'];
+
+    var add = function(item){
+        items.push(item);
+    };
+
+    var getItems = function(){
+        return items;
+    };
+
+    return {
+        items: getItems,
+        add: add
+    }
+})
 ;
