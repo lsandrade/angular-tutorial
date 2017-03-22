@@ -126,4 +126,8 @@ app
   $scope.reset();
 })
 
+.controller('CustomForm', function($scope){
+    $scope.user = {};
+})
+
 ;
