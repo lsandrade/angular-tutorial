@@ -130,4 +130,8 @@ app
     $scope.user = {};
 })
 
+.controller('FormNonImmetiate', function($scope){
+    $scope.user = {};
+})
+
 ;
