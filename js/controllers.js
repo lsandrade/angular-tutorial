@@ -54,4 +54,10 @@ app
   $scope.name = 'Gingerbread Baby';
 }])
 
+.controller('myServiceController', function($scope, notify){
+    $scope.callNotify = function(msg){
+        notify(msg);
+    };
+})
+
 ;
