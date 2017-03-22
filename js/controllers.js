@@ -138,5 +138,21 @@ app
     $scope.myString = "hello filter";
 })
 
+.controller('FilterSearch', function($scope){
+    $scope.people = [
+        {
+            name: "Eric Simons",
+            born: "Chicago"
+        },
+        {
+            name: "Albert Pai",
+            born: "Taiwan"
+        },
+        {
+            name: "Mathew Greenster",
+            born: "Virginia"
+        }
+    ];
+})
 
 ;
