@@ -1,10 +1,11 @@
 app
 
-.controller('InvoiceController', function(){
+.controller('InvoiceController',
+    function(currencyConverter){
     this.qty =1;
     this.cost = 2;
     this.inCurr = 'USD';
-    this.currencies = ['USD', 'EUR', 'CNY'];
+    this.currencies = currencyConverter.currencies;
 
     this.usdToForeignRates = {
         USD: 1,
@@ -13,15 +14,7 @@ app
     };
 
     this.total = function(outCurr){
-        var result = this.convertCurrency(this.qty * this.cost,
-            this.inCurr, outCurr);
-        console.log(outCurr);
-        return result;
-    };
-
-    this.convertCurrency = function(amount, inCurr, outCurr){
-        var result = amount * this.usdToForeignRates[outCurr];
-        return result;
+        return currencyConverter.convert(this.qty * this.cost, this.inCurr, outCurr);
     };
 
     this.pay = function(){
