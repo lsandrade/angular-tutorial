@@ -6,11 +6,7 @@ function getData($timeout, $q) {
   return function() {
     return $q(function(resolve,reject){
         $timeout(function(){
-            if(Math.round(Math.random())){
-                resolve('data received!')
-            } else {
-                reject('oh no an error! try again')
-            }
+            resolve(Math.floor(Math.random() * 10))
         }, 2000)
     })
   }
@@ -19,12 +15,11 @@ function getData($timeout, $q) {
 app.factory('getData', getData)
 .run(function(getData) {
   var promise = getData()
-      .then(function(string){
-          console.log(string)
-      }, function(error){
-          console.error(error)
+      .then(function(num){
+          console.log(num)
+          return num * 2
       })
-      .finally(function(){
-          console.log('finished at:', new Date())
+      .then(function(num){
+          console.log(num)
       })
 })
