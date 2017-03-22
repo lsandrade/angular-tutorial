@@ -6,6 +6,7 @@ app
     this.cost = 2;
     this.inCurr = 'USD';
     this.currencies = currencyConverter.currencies;
+    this.message = "hello";
 
     this.usdToForeignRates = {
         USD: 1,
