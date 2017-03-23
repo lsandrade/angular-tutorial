@@ -68,7 +68,9 @@ app.factory('getData', getData)
             }
         })
         .when('/http',{
-            template: "Message: {{message}}",
+            template: "Message: {{message}}<br>" +
+            "<input ng-model='sendMessage' placeholder='Enter a message'>"+
+            "<button ng-click='sendMsg(sendMessage)' class='btn'>send</button>",
             controller: "HttpCtrl"
         })
         .otherwise({

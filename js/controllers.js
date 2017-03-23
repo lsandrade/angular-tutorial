@@ -200,5 +200,14 @@ app
         .then(function(res){
         $scope.message = res.data.message;
     });
+    $scope.sendMsg = function(data) {
+        data = {message:data};
+        $http.post('http://test-routes.herokuapp.com/test/uppercase', data)
+            .success(function(body){
+                console.log(body.message);
+            });
+    }
+
+
 })
 ;
