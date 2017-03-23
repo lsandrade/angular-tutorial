@@ -35,9 +35,12 @@ app.factory('getData', getData)
 //Routing
 .config(function($routeProvider){
     $routeProvider
-        .when('template',{
+        .when('/',{
+            templateUrl: "antigo.html"
+        })
+        .when('/template',{
             controller: "TemplateCache",
-            template: "template.html"
+            templateUrl: "template.html"
         })
         .otherwise('/');
 })
