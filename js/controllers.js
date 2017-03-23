@@ -186,4 +186,8 @@ app
         message);
     };
 })
+
+.controller('TemplateCache', function(){
+
+})
 ;

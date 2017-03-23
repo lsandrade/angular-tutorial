@@ -1,4 +1,4 @@
-var app = angular.module('invoice1', ['filters']);
+var app = angular.module('invoice1', ['filters', 'ngRoute']);
 
 var INTEGER_REGEXP = /^-?\d+$/;
 
@@ -24,11 +24,22 @@ app.factory('getData', getData)
       })
 })
 
-    .config(function($logProvider){
+.config(function($logProvider){
   $logProvider.debugEnabled(false);
 })
 .run(function($rootScope, $log){
   $rootScope.$log = $log;
+})
+
+
+//Routing
+.config(function($routeProvider){
+    $routeProvider
+        .when('template',{
+            controller: "TemplateCache",
+            template: "template.html"
+        })
+        .otherwise('/');
 })
 
 
