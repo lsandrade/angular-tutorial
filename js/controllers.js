@@ -155,4 +155,13 @@ app
     ];
 })
 
+.controller('FunController', function(){
+    this.start = function(){
+        console.log('Fun times have started!! :D');
+    }
+    this.end = function(){
+        console.log("Fun time is over.");
+    }
+})
+
 ;
