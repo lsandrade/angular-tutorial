@@ -43,7 +43,17 @@ app.factory('getData', getData)
             templateUrl: "template.html"
         })
         .when('/cookies',{
-            template: "NOM NOM NOM"
+            template: "NOM NOM NOM",
+            resolve: {
+                app: function($q, $timeout){
+                    var defer = $q.defer();
+                    $timeout(function(){
+                        defer.resolve();
+                    }, 2000);
+
+                    return defer.promise;
+                }
+            }
         })
         .when('/look/:name/:lastname',{
             template: "<h1>Hello ({{lastname | uppercase}}, {{ name}})</h1>",
