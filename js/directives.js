@@ -97,9 +97,19 @@ app
 
 .directive('welcome',function(){
   return {
-      restrict: 'E',
+      restrict: 'E', //Element
       template: '<div>Howdy there! You look splendid.</div>'
   }
 })
+
+.directive('welcomea',function(){
+  return {
+    restrict: 'A', //Atribute
+      link: function(){
+        alert('Howdy!')
+      }
+  }
+})
+
 
 ;
