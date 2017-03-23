@@ -97,10 +97,38 @@ app
 
 .directive('welcome',function(){
   return {
-      restrict: 'E', //Element
-      template: '<div>Howdy there! You look splendid.</div>'
+    restrict: "E",
+    controller: function($scope) {
+      $scope.words = [];
+
+      this.sayHello = function() {
+        $scope.words.push("hello");
+      };
+
+      this.sayHowdy = function() {
+        $scope.words.push("howdy");
+      };
+
+      this.sayHi = function() {
+        $scope.words.push("hi");
+      };
+    },
+
+    link: function(scope, element){
+      element.bind("mouseenter", function() {
+        console.log(scope.words);
+      });
+    }
   }
 })
+    .directive('hello', function(){
+      return {
+        require: "welcome",
+          link: function(scope, element, attrs, welcomeCtrl){
+            welcomeCtrl.sayHello();
+          }
+      }
+    })
 
 .directive('entering',function(){
   return function(scope, element, attrs){
