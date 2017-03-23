@@ -118,7 +118,12 @@ app
       element.bind("mouseenter", function() {
         console.log(scope.words);
       });
-    }
+    },
+
+      scope: {},
+      transclude: true,
+      template: "<div>This is the welcome component</div>",
+
   }
 })
     .directive('hello', function(){
