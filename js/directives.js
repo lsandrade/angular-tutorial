@@ -110,5 +110,13 @@ app
   }
 })
 
+.directive('leaving', function(){
+  return function(scope, element){
+    element.bind('mouseleave', function(){
+      console.log('mouse has left the div');
+    })
+  }
+})
+
 
 ;
