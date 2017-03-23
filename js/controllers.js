@@ -173,4 +173,10 @@ app
 .controller("drinkCtrl", function($scope){
     $scope.ctrlFlavor = "blackberry";
 })
+
+.controller("phoneCtrl", function($scope){
+    $scope.callHome = function(message){
+        alert(message);
+    };
+})
 ;
