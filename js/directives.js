@@ -155,10 +155,13 @@ app
   return {
     restrict: 'E',
     transclude: true,
-    template: '<h2>Hello world!</h2> <div role="tabpanel" ng-transclude></div>',
+    template: '<div role="tabpanel" ng-show="active" ng-transclude></div>',
     require: '^tabset',
-      scope: { },
+      scope: {
+        heading: '@'
+      },
     link: function(scope, elem, attr, tabsetCtrl) {
+      scope.active = false
       tabsetCtrl.addTab(scope)
     }
   }
@@ -175,8 +178,21 @@ app
     controllerAs: 'tabset',
     controller: function() {
       this.tabs = []
+
           this.addTab = function addTab(tab) {
           this.tabs.push(tab)
+
+              if(this.tabs.length === 1)
+                tab.active = true
+      }
+
+      this.select = function(selectedTab){
+        angular.forEach(this.tabs, function(tab){
+          if(tab.active && tab !== selectedTab){
+            tab.active = false;
+          }
+        })
+          selectedTab.active = true
       }
     }
   }
