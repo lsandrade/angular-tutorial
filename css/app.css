@@ -17,3 +17,7 @@ div[contentEditable] {
     cursor: pointer;
     background-color: #D0D0D0;
 }
+
+.activeClass{
+    background: lightseagreen;
+}
