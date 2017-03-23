@@ -42,6 +42,13 @@ app.factory('getData', getData)
             controller: "TemplateCache",
             templateUrl: "template.html"
         })
+        .when('/cookies',{
+            template: "NOM NOM NOM"
+        })
+        .when('/look/:name/:lastname',{
+            template: "<h1>Hello ({{lastname | uppercase}}, {{ name}})</h1>",
+            controller: "msgCtrl"
+        })
         .otherwise('/');
 })
 

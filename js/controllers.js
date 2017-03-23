@@ -188,6 +188,10 @@ app
 })
 
 .controller('TemplateCache', function(){
+})
 
+.controller('msgCtrl', function($routeParams, $scope){
+    $scope.name = $routeParams.name;
+    $scope.lastname = $routeParams.lastname;
 })
 ;
