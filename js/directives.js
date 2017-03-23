@@ -158,7 +158,9 @@ app
     template: '<h2>Hello world!</h2> <div role="tabpanel" ng-transclude></div>',
     require: '^tabset',
       scope: { },
-    link: function(scope, elem, attr) {}
+    link: function(scope, elem, attr, tabsetCtrl) {
+      tabsetCtrl.addTab(scope)
+    }
   }
 })
 
@@ -172,8 +174,10 @@ app
     bindToController: true,
     controllerAs: 'tabset',
     controller: function() {
-      var self = this
-      self.tabs = []
+      this.tabs = []
+          this.addTab = function addTab(tab) {
+          this.tabs.push(tab)
+      }
     }
   }
 })
