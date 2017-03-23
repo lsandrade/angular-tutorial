@@ -169,4 +169,8 @@ app
         alert(chore + " is done!");
     };
 })
+
+.controller("drinkCtrl", function($scope){
+    $scope.ctrlFlavor = "blackberry";
+})
 ;

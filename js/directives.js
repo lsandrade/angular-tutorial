@@ -265,4 +265,16 @@ app
           "<div class='button' ng-click='done({chore : chore})'>I'm done</div>"
   };
 })
+
+.directive("drink", function(){
+  return {
+      scope: {
+        flavor: "@"
+      },
+      template: "<div>{{flavor}}</div>",
+      link: function(scope, element, attrs){
+        scope.flavor = attrs.flavor;
+      }
+  };
+})
 ;
