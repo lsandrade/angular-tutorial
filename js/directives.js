@@ -122,7 +122,7 @@ app
 
       scope: {},
       transclude: true,
-      template: "<div>This is the welcome component</div>",
+      template: "<div>This is the welcome component</div><ng-transclude></ng-transclude>",
 
   }
 })
@@ -148,6 +148,16 @@ app
     element.bind('mouseleave', function(){
       scope.$apply(attrs.leaving);
     })
+  }
+})
+
+.directive('tab', function() {
+  return {
+    restrict: 'E',
+    transclude: true,
+    template: '<h2>Hello world!</h2> <div role="tabpanel" ng-transclude></div>',
+    scope: { },
+    link: function(scope, elem, attr) {}
   }
 })
 

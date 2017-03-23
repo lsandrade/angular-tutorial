@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>Example - example-guide-concepts-1-production</title>
     <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
     <script src="js/app.js"></script>
     <script src="js/controllers.js"></script>
@@ -232,10 +233,18 @@
 <div ng-controller="FilterSearch">
     <h2>Filter Search</h2>
     <input type="text" ng-model="search">
-
-    <p ng-repeat="person in people | filter: search | orderBy:'name' | limitTo:5"">
-        {{ person.name }} - {{ person.born }}
-    </p>
+    <table class="table table-striped">
+        <thead>
+            <th>Name</th>
+            <th>Born</th>
+        </thead>
+        <tbody>
+            <tr ng-repeat="person in people | filter: search | orderBy:'name' | limitTo:5"">
+                <td>{{person.name}}</td>
+                <td>{{person.born}}</td>
+            </tr>
+        </tbody>
+    </table>
 </div>
   <hr>
 <h2>Directive welcome  - Element</h2>
@@ -246,5 +255,16 @@
 <h2>Directive welcome  - Advanced</h2>
 <div ng-controller="FunController as fun" entering="fun.start()" leaving="fun.end()">Hover over me for fun times. huehuehue</div>
 
+  <hr>
+<h2>Thinkster Directive</h2>
+<tab>
+  Lorem ipsum dolor sit amet, ut eam nullam utroque liberavisse, ea
+  graecis tractatos contentiones quo. Ipsum phaedrum scripserit sit id,
+  eu insolens indoctum vel, eos eu offendit delectus tincidunt. Eum
+  nostrum reprehendunt in, ullum nostrud legimus ei quo. Sed et elitr
+  corrumpit. Nibh maiestatis voluptatum has no, at est inermis epicuri,
+  omnis temporibus cu mei. Legere scriptorem voluptatibus et est, ea
+  noluisse deterruisset sea.
+</tab>
 </body>
 </html>
