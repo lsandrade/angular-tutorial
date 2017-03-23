@@ -49,7 +49,17 @@ app.factory('getData', getData)
             template: "<h1>Hello ({{lastname | uppercase}}, {{ name}})</h1>",
             controller: "msgCtrl"
         })
-        .otherwise('/');
+        .when('/redirect', {
+            redirectTo: function (routeParams, path, search) {
+                console.log(routeParams);
+                console.log(path);
+                console.log(search);
+                return "/";
+            }
+        })
+        .otherwise({
+            redirectTo: '/'
+        });
 })
 
 
