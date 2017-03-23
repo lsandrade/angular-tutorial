@@ -194,4 +194,11 @@ app
     $scope.name = $routeParams.name;
     $scope.lastname = $routeParams.lastname;
 })
+
+.controller('HttpCtrl', function($scope, $http){
+    $http.get('http://test-routes.herokuapp.com/test/hello')
+        .then(function(res){
+        $scope.message = res.data.message;
+    });
+})
 ;

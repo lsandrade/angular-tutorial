@@ -67,6 +67,10 @@ app.factory('getData', getData)
                 return "/";
             }
         })
+        .when('/http',{
+            template: "Message: {{message}}",
+            controller: "HttpCtrl"
+        })
         .otherwise({
             redirectTo: '/'
         });
