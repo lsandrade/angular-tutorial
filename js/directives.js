@@ -253,4 +253,16 @@ app
       }
   };
 })
+
+.directive("kid", function(){
+  return {
+    restrict: "E",
+      scope: {
+        done: "&"
+      },
+      template: "<input type='text' ng-model='chore'>" +
+      "{{chhore}}"+
+          "<div class='button' ng-click='done({chore : chore})'>I'm done</div>"
+  };
+})
 ;
