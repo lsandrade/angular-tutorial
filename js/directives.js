@@ -102,12 +102,11 @@ app
   }
 })
 
-.directive('welcomea',function(){
-  return {
-    restrict: 'A', //Atribute
-      link: function(){
-        alert('Howdy!')
-      }
+.directive('entering',function(){
+  return function(scope, element){
+      element.bind('mouseenter', function(){
+        console.log("mouse has entered the div");
+      })
   }
 })
 
