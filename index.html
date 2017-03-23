@@ -307,5 +307,15 @@
     <h2>Isolate Scope "&"</h2>
     <div phone dial="callHome(message)"></div>
 </div>
+
+<div ng-controller="InvoiceCtrl">
+    <phone number="555-1234" network="network" make-call="leaveVoicemail(number, message)"></phone>
+    <phone number="867-5309" network="network" make-call="leaveVoicemail(number, message)"></phone>
+    <phone number="911" network="network" make-call="leaveVoicemail(number, message)"></phone>
+</div>
+<div>
+    <h2>angular.element</h2>
+    <dumb-password></dumb-password>
+</div>
 </body>
 </html>

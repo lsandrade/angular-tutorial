@@ -277,12 +277,41 @@ app
     
 .directive("phone", function () {
     return{
-      scope: {
-        dial: "&"
-      },
-        template: '<input type="text" ng-model="value">' +
-      '<div class="button" ng-click="dial({message:value})">' +
-      'Call home!</div>',
+      restrict: "E",
+        scope: {
+          number: '@',
+            network: '=',
+            makeCall: '&'
+        },
+        templateUrl: 'phone.html',
+        link: function(scope){
+          scope.networks = ["Verizon", "AT&T", "Sprint"];
+          scope.network = scope.networks[0];
+        }
     };
 })
+
+.directive("dumbPassword", function () {
+  var validElement = angular.element("<div>" +
+      "{{model.input}}</div>");
+
+  var link = function(scope){
+    scope.$watch("model.input", function(value){
+          if(value === "password"){
+            validElement.toggleClass("alert alert-danger");
+          }
+        })
+  };
+  return {
+    restrict: "E",
+    replace: true,
+    templateUrl: "dumbpass.html",
+    compile: function(tElem){
+      tElem.append(validElement);
+      return link;
+    }
+  };
+})
+
+
 ;

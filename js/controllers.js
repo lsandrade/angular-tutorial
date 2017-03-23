@@ -179,4 +179,11 @@ app
         alert(message);
     };
 })
+    
+.controller("InvoiceCtrl", function ($scope) {
+    $scope.leaveVoicemail= function(number, message){
+        alert("Number: " + number + "Said: " +
+        message);
+    };
+})
 ;
