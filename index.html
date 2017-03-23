@@ -317,5 +317,16 @@
     <h2>angular.element</h2>
     <dumb-password></dumb-password>
 </div>
+
+<div >
+    <h2>$index, $event, $log</h2>
+    <div class="btn btn-primary"
+            ng-repeat="item in 'abcdef'.split('')"
+            ng-click="$log.debug($event)">
+        {{$index + 1}}. {{item}}
+        {{ev.pageX}}
+    </div>
+
+</div>
 </body>
 </html>

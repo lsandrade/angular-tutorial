@@ -23,3 +23,13 @@ app.factory('getData', getData)
           console.log(num)
       })
 })
+
+    .config(function($logProvider){
+  $logProvider.debugEnabled(false);
+})
+.run(function($rootScope, $log){
+  $rootScope.$log = $log;
+})
+
+
+;
